@@ -107,7 +107,35 @@ This will launch the main menu where you can select different design patterns to
 
 ## 📚 Running Instructions
 
-### Option 1: Run Main Application (Recommended)
+### 🎯 **Recommended: Run Tests for Best Experience**
+
+The most comprehensive way to see design patterns in action is through our test suite:
+
+```bash
+# Run all tests with detailed output
+mvn test
+
+# Run specific Factory Method pattern tests
+mvn test -Dtest=FactoryMethodTest
+
+# Run specific test method for full demo
+mvn test -Dtest=FactoryMethodTest#testFactoryMethodDemo
+```
+
+**Expected Output:**
+```
+=== Character Created for DragonSlayer ===
+Warrior swings mighty sword! Dealing 25 damage.
+Warrior raises shield, reducing incoming damage by 50%
+
+=== Character Created for Gandalf ===
+Mage casts Fireball! Dealing 35 magic damage.
+Mage creates magical barrier, absorbing 30 damage
+```
+
+### 🚀 **Alternative: Interactive Main Application**
+
+For a menu-driven experience:
 
 ```bash
 # Compile and run the main application
@@ -117,30 +145,21 @@ mvn clean compile exec:java
 ./mvnw clean compile exec:java
 ```
 
-### Option 2: See the Pattern in Action (Recommended)
+This launches an interactive menu where you can select different design patterns to explore.
 
-```bash
-# Run tests to see detailed Factory Method pattern demonstration
-mvn test
+### 📦 **Advanced: Build and Run JAR**
 
-# Run specific test class for Factory Method pattern
-mvn test -Dtest=FactoryMethodTest
-
-# Run specific test method for full demo
-mvn test -Dtest=FactoryMethodTest#testFactoryMethodDemo
-```
-
-### Option 3: Build JAR and Run
+For standalone execution:
 
 ```bash
 # Build executable JAR
 mvn clean package
 
-# Run the JAR
+# Run the JAR with preview features
 java --enable-preview -jar target/design-patterns-1.0.0.jar
 ```
 
-### Option 4: IDE Integration
+### 💻 **IDE Integration**
 
 1. **Import Project**: Import as Maven project in your IDE
 2. **Set Java Version**: Ensure Java 25 is configured
@@ -149,26 +168,19 @@ java --enable-preview -jar target/design-patterns-1.0.0.jar
 
 ## 🧪 Testing
 
-### Run All Tests
+### **Run All Tests**
 
 ```bash
 mvn test
 ```
 
-### Run Specific Test Class
+### **Run Specific Test Class**
 
 ```bash
 mvn test -Dtest=FactoryMethodTest
 ```
 
-### Run Specific Pattern Tests
-
-```bash
-# Run specific test class
-mvn test -Dtest=FactoryMethodTest
-```
-
-### Generate Test Report
+### **Generate Test Report**
 
 ```bash
 mvn surefire-report:report
@@ -202,15 +214,9 @@ When you run the tests (`mvn test`), you'll see the design patterns in action wi
    - Create test class in corresponding test package
    - Test pattern functionality and correctness
 
-
-
-
-
-
-
 ## 🐛 Troubleshooting
 
-### Common Issues
+### **Common Issues**
 
 **Java Version Issues**:
 ```bash
@@ -242,4 +248,5 @@ This project is created for educational purposes. Feel free to use and modify fo
 
 **Happy Learning! 🚀**
 
+*Remember: Understanding design patterns is about recognizing when and how to apply them, not just memorizing their structure.* 
 *Remember: Understanding design patterns is about recognizing when and how to apply them, not just memorizing their structure.* 
