@@ -1,9 +1,5 @@
 package com.designpatterns.creational.factorymethod.characters;
 
-/**
- * Warrior - Concrete implementation of GameCharacter
- * Tank class with high health and strong melee attacks
- */
 public class Warrior implements GameCharacter {
     private int health = 120;
     

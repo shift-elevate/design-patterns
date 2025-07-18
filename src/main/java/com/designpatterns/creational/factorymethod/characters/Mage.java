@@ -1,9 +1,5 @@
 package com.designpatterns.creational.factorymethod.characters;
 
-/**
- * Mage - Concrete implementation of GameCharacter
- * Ranged spellcaster with powerful magic but low health
- */
 public class Mage implements GameCharacter {
     private int health = 70;
     

@@ -68,6 +68,13 @@
                             <mainClass>com.designpatterns.creational.builder.ECommerceLauncher</mainClass>
                         </configuration>
                     </execution>
+                    <!-- Adapter Pattern -->
+                    <execution>
+                        <id>adapter</id>
+                        <configuration>
+                            <mainClass>com.designpatterns.strategy.ECommerceLauncher</mainClass>
+                        </configuration>
+                    </execution>
                 </executions>
             </plugin>
 

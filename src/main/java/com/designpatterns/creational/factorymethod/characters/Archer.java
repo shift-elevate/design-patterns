@@ -1,9 +1,5 @@
 package com.designpatterns.creational.factorymethod.characters;
 
-/**
- * Archer - Concrete implementation of GameCharacter
- * Balanced ranged fighter with high agility and precision
- */
 public class Archer implements GameCharacter {
     private int health = 90;
     

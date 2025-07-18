@@ -3,16 +3,10 @@ package com.designpatterns.creational.builder.builders;
 import com.designpatterns.creational.builder.Product;
 import com.designpatterns.creational.builder.products.PremiumProduct;
 
-/**
- * PremiumProductBuilder - Concrete builder for creating PremiumProduct instances
- * This builder extends the base functionality with premium-specific features
- * like warranty and support level
- */
 public class PremiumProductBuilder extends ProductBuilder {
-    protected int warrantyMonths = 12; // Default warranty
-    protected String supportLevel = "Standard"; // Default support level
+    protected int warrantyMonths = 12;
+    protected String supportLevel = "Standard";
     
-    // Override parent methods to return PremiumProductBuilder for fluent interface
     @Override
     public PremiumProductBuilder setName(String name) {
         super.setName(name);
@@ -37,7 +31,6 @@ public class PremiumProductBuilder extends ProductBuilder {
         return this;
     }
     
-    // Additional fluent interface methods for premium features
     public PremiumProductBuilder setWarrantyMonths(int warrantyMonths) {
         this.warrantyMonths = warrantyMonths;
         return this;

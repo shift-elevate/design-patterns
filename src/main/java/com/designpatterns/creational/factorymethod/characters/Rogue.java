@@ -1,9 +1,5 @@
 package com.designpatterns.creational.factorymethod.characters;
 
-/**
- * Rogue - Concrete implementation of GameCharacter
- * Stealth assassin with high damage and evasion abilities
- */
 public class Rogue implements GameCharacter {
     private int health = 85;
     

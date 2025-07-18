@@ -9,10 +9,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * BuilderPatternTest - Comprehensive test suite for Builder pattern implementation
- * Tests all aspects including validation, fluent interface, director usage, and edge cases
- */
 public class BuilderPatternTest {
     
     private StandardProductBuilder standardBuilder;

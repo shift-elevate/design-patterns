@@ -4,11 +4,6 @@ import com.designpatterns.creational.builder.Product;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * PremiumProduct - Enhanced implementation of Product interface
- * This class represents a premium product with additional features
- * like warranty and premium support
- */
 public class PremiumProduct implements Product {
     private final String name;
     private final double price;
@@ -17,7 +12,6 @@ public class PremiumProduct implements Product {
     private final int warrantyMonths;
     private final String supportLevel;
     
-    // Package-private constructor - only builders can create products
     public PremiumProduct(String name, double price, String description, 
                          List<String> tags, int warrantyMonths, String supportLevel) {
         this.name = name;

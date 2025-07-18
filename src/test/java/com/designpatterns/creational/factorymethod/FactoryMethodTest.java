@@ -16,10 +16,6 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import static org.junit.jupiter.api.Assertions.*;
 
-/**
- * Unit tests for the Factory Method pattern implementation
- * Run these tests to see the Factory Method pattern in action!
- */
 class FactoryMethodTest {
     
     private CharacterFactory warriorFactory;

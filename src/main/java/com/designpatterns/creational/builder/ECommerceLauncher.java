@@ -3,17 +3,11 @@ package com.designpatterns.creational.builder;
 import com.designpatterns.creational.builder.builders.StandardProductBuilder;
 import com.designpatterns.creational.builder.builders.PremiumProductBuilder;
 
-/**
- * ECommerceLauncher - Client code that demonstrates the Builder pattern
- * This class shows how to use different builders and the director
- * to create complex products with clean, readable code
- */
 public class ECommerceLauncher {
     
     public static void main(String[] args) {
         System.out.println("=== Builder Pattern Demo: E-Commerce Product Creation ===\n");
         
-        // Direct builder usage - maximum flexibility
         System.out.println("1. Direct Builder Usage:");
         Product laptop = new StandardProductBuilder()
             .setName("Gaming Laptop Pro")
@@ -27,7 +21,6 @@ public class ECommerceLauncher {
         displayProduct(laptop);
         System.out.println();
         
-        // Using director for common configurations
         System.out.println("2. Using Director for Common Configurations:");
         ProductDirector director = new ProductDirector();
         
@@ -50,7 +43,6 @@ public class ECommerceLauncher {
         displayProduct(featuredKeyboard);
         System.out.println();
         
-        // Premium product with extended features
         System.out.println("3. Premium Product with Extended Features:");
         Product premiumHeadset = director.createPremiumProduct(
             new PremiumProductBuilder(),
@@ -62,7 +54,6 @@ public class ECommerceLauncher {
         displayProduct(premiumHeadset);
         System.out.println();
         
-        // Gaming product configuration
         System.out.println("4. Gaming Product Configuration:");
         Product gamingChair = director.createGamingProduct(
             new StandardProductBuilder(),
@@ -74,7 +65,6 @@ public class ECommerceLauncher {
         displayProduct(gamingChair);
         System.out.println();
         
-        // Business product for enterprise
         System.out.println("5. Business Product for Enterprise:");
         Product businessMonitor = director.createBusinessProduct(
             new StandardProductBuilder(),
@@ -86,7 +76,6 @@ public class ECommerceLauncher {
         displayProduct(businessMonitor);
         System.out.println();
         
-        // Demonstrating builder reuse
         System.out.println("6. Builder Reuse:");
         StandardProductBuilder reusableBuilder = new StandardProductBuilder();
         
@@ -100,7 +89,6 @@ public class ECommerceLauncher {
         displayProduct(accessory1);
         System.out.println();
         
-        // Reset and reuse the same builder
         Product accessory2 = reusableBuilder
             .reset()
             .setName("Wireless Charger")
@@ -115,10 +103,6 @@ public class ECommerceLauncher {
         System.out.println("\n=== Builder Pattern Demo Complete ===");
     }
     
-    /**
-     * Helper method to display product information
-     * Since we simplified the Product interface, we handle display logic here
-     */
     private static void displayProduct(Product product) {
         System.out.println("=== " + product.getName() + " ===");
         System.out.println("Price: $" + String.format("%.2f", product.getPrice()));
