@@ -25,22 +25,22 @@ This project serves as an educational resource for learning design patterns thro
 
 ## 🔧 Prerequisites
 
-- **Java 25** (with preview features enabled)
-- **Maven 3.8+**
+- **Java 21** (OpenJDK 21.0.7+)
+- **Maven 3.9+**
 - **IDE** (IntelliJ IDEA, Eclipse, or VS Code recommended)
 
-### Installing Java 25
+### Installing Java 21
 
 ```bash
 # Using SDKMAN (recommended)
-sdk install java 25.ea.27-open
+sdk install java 21.0.7-tem
 
 # For this project only (recommended approach)
 # The project includes .sdkmanrc file for automatic environment switching
 sdk env
 
 # Or manually switch for this session only
-sdk use java 25.ea.27-open
+sdk use java 21.0.7-tem
 
 # Verify installation
 java --version
@@ -51,34 +51,38 @@ java --version
 ```
 design-patterns/
 └── src/main/java/com/designpatterns/
-    └── creational/
-        └── factorymethod/             # Factory Method Pattern
+    ├── creational/
+    │   ├── factorymethod/
+    │   └── builder/
+    └── strategy/
+        └── adapter/
 ```
 
 **Pattern Organization:**
 - Each design pattern has its own dedicated package
 - Clean separation between domain objects and creation logic
 - Extensible structure for adding new patterns
+- Comprehensive test coverage for each pattern
 
 ## 🚀 Quick Start
 
 ### 1. Clone the Repository
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/shift-elevate/design-patterns.git
 cd design-patterns
 ```
 
 ### 2. Setup Environment (Automatic with SDKMAN)
 
-The project includes a `.sdkmanrc` file that automatically configures Java 25 and Maven when you enter the directory:
+The project includes a `.sdkmanrc` file that automatically configures Java 21 and Maven when you enter the directory:
 
 ```bash
-# Activate the project environment (Java 25 + Maven)
+# Activate the project environment (Java 21 + Maven)
 sdk env
 
 # This will automatically switch to:
-# - Java 25.ea.27-open
+# - Java 21.0.7-tem
 # - Maven 3.9.10
 ```
 
@@ -91,61 +95,52 @@ mvn clean compile
 ### 4. Run the Main Application
 
 ```bash
-mvn exec:java
+mvn exec:java -Dexec.mainClass="com.designpatterns.Main"
 ```
 
-This will launch the main menu where you can select different design patterns to explore.
+This will launch the main demonstration showing all implemented design patterns.
 
 ## 🎮 Available Design Patterns
 
 ### 🏗️ Creational Patterns
 
 #### 1. Factory Method Pattern
+- **Location**: `src/main/java/com/designpatterns/creational/factorymethod/`
 - **Example**: RPG Character Creation System
 - **Demonstrates**: Object creation without specifying exact classes
-- **Best Demo**: Run the tests to see the pattern in action
+- **Key Classes**: `GameCharacter`, `CharacterFactory`, `WarriorFactory`, `MageFactory`, `ArcherFactory`, `RogueFactory`
+- **Test**: `FactoryMethodTest`
+
+#### 2. Builder Pattern
+- **Location**: `src/main/java/com/designpatterns/creational/builder/`
+- **Example**: E-Commerce Product Creation System
+- **Demonstrates**: Complex object construction with fluent interface
+- **Key Classes**: `Product`, `ProductBuilder`, `StandardProductBuilder`, `PremiumProductBuilder`, `ProductDirector`
+- **Test**: `BuilderPatternTest`
+
+### 🔄 Structural Patterns
+
+#### 3. Adapter Pattern (in Strategy Package)
+- **Location**: `src/main/java/com/designpatterns/strategy/adapter/`
+- **Example**: Legacy Payment System Integration
+- **Demonstrates**: Bridging incompatible interfaces
+- **Key Classes**: `PaymentProcessor`, `LegacyPaymentAdapter`, `LegacyPaymentSystem`, `PaymentService`
+- **Test**: `AdapterPatternTest`
 
 ## 📚 Running Instructions
 
-### 🎯 **Recommended: Run Tests for Best Experience**
+### 🎯 **Recommended: Run Main Application for Complete Demo**
 
-The most comprehensive way to see design patterns in action is through our test suite:
-
-```bash
-# Run all tests with detailed output
-mvn test
-
-# Run specific Factory Method pattern tests
-mvn test -Dtest=FactoryMethodTest
-
-# Run specific test method for full demo
-mvn test -Dtest=FactoryMethodTest#testFactoryMethodDemo
-```
-
-**Expected Output:**
-```
-=== Character Created for DragonSlayer ===
-Warrior swings mighty sword! Dealing 25 damage.
-Warrior raises shield, reducing incoming damage by 50%
-
-=== Character Created for Gandalf ===
-Mage casts Fireball! Dealing 35 magic damage.
-Mage creates magical barrier, absorbing 30 damage
-```
-
-### 🚀 **Alternative: Interactive Main Application**
-
-For a menu-driven experience:
+The best way to see all design patterns in action:
 
 ```bash
-# Compile and run the main application
-mvn clean compile exec:java
+# Run the main application with all pattern demonstrations
+mvn exec:java -Dexec.mainClass="com.designpatterns.Main"
 
-# Or run with Maven wrapper (if available)
-./mvnw clean compile exec:java
+# Or compile and run directly
+mvn clean compile
+java -cp target/classes com.designpatterns.Main
 ```
-
-This launches an interactive menu where you can select different design patterns to explore.
 
 ### 📦 **Advanced: Build and Run JAR**
 
@@ -155,16 +150,16 @@ For standalone execution:
 # Build executable JAR
 mvn clean package
 
-# Run the JAR with preview features
-java --enable-preview -jar target/design-patterns-1.0.0.jar
+# Run the JAR
+java -jar target/design-patterns-1.0.0.jar
 ```
 
 ### 💻 **IDE Integration**
 
 1. **Import Project**: Import as Maven project in your IDE
-2. **Set Java Version**: Ensure Java 25 is configured
-3. **Enable Preview Features**: Add `--enable-preview` to VM options
-4. **Run Main Class**: Execute `com.designpatterns.Main`
+2. **Set Java Version**: Ensure Java 21 is configured
+3. **Run Main Class**: Execute `com.designpatterns.Main`
+4. **Run Tests**: Execute individual test classes for detailed pattern demonstrations
 
 ## 🧪 Testing
 
@@ -177,7 +172,14 @@ mvn test
 ### **Run Specific Test Class**
 
 ```bash
+# Factory Method Pattern
 mvn test -Dtest=FactoryMethodTest
+
+# Builder Pattern
+mvn test -Dtest=BuilderPatternTest
+
+# Adapter Pattern
+mvn test -Dtest=AdapterPatternTest
 ```
 
 ### **Generate Test Report**
@@ -188,31 +190,26 @@ mvn surefire-report:report
 
 Test reports will be available in `target/site/surefire-report.html`
 
-## 🎯 Expected Output
+## 🎯 Pattern Demonstrations
 
-When you run the tests (`mvn test`), you'll see the design patterns in action with clear demonstrations and explanations of how each pattern works.
+### Factory Method Pattern
+- Creates different character types (Warrior, Mage, Archer, Rogue) using specialized factories
+- Each character has unique abilities and attributes
+- Demonstrates polymorphic object creation
 
-## 🛠️ Development Setup
+### Builder Pattern
+- Constructs complex product objects with many optional parameters
+- Uses fluent interface for readable object construction
+- Includes director for common product configurations
+- Supports different product types (Standard, Premium)
 
-### Adding New Design Patterns
+### Adapter Pattern
+- Integrates legacy payment system with modern payment interface
+- Demonstrates transparent translation between incompatible APIs
+- Shows enhanced functionality through adapter layer
+- Includes comprehensive payment processing and validation
 
-1. **Create Package Structure**:
-   ```
-   src/main/java/com/designpatterns/{category}/{pattern}/
-   ```
 
-2. **Implement Pattern Classes**:
-   - Interface/Abstract classes
-   - Concrete implementations
-   - Demo/Client class
-
-3. **Add to Main Menu**:
-   - Update `Main.java` to include new pattern
-   - Add execution configuration in `pom.xml`
-
-4. **Write Tests**:
-   - Create test class in corresponding test package
-   - Test pattern functionality and correctness
 
 ## 🐛 Troubleshooting
 
@@ -223,7 +220,7 @@ When you run the tests (`mvn test`), you'll see the design patterns in action wi
 # Check Java version
 java --version
 
-# Ensure Java 25 is active
+# Ensure Java 21 is active
 sdk current java
 ```
 
@@ -236,9 +233,11 @@ mvn clean compile
 mvn compile -DskipTests
 ```
 
-**Preview Features Not Enabled**:
-- Ensure `--enable-preview` is in your run configuration
-- Check IDE settings for preview feature support
+**Class Path Issues**:
+```bash
+# Ensure proper classpath when running
+java -cp target/classes com.designpatterns.Main
+```
 
 ## 📄 License
 
@@ -248,5 +247,4 @@ This project is created for educational purposes. Feel free to use and modify fo
 
 **Happy Learning! 🚀**
 
-*Remember: Understanding design patterns is about recognizing when and how to apply them, not just memorizing their structure.* 
 *Remember: Understanding design patterns is about recognizing when and how to apply them, not just memorizing their structure.* 

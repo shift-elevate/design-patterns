@@ -20,7 +20,7 @@ public class Main {
         
         System.out.println("\n\n3. ADAPTER PATTERN");
         System.out.println("-".repeat(40));
-        com.designpatterns.strategy.ECommerceLauncher.main(args);
+        com.designpatterns.strategy.adapter.ECommerceLauncher.main(args);
         
         System.out.println("\n" + "=".repeat(70));
         System.out.println("For comprehensive testing and detailed demonstrations:");

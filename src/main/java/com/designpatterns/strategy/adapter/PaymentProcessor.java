@@ -1,4 +1,4 @@
-package com.designpatterns.strategy;
+package com.designpatterns.strategy.adapter;
 
 public interface PaymentProcessor {
     
