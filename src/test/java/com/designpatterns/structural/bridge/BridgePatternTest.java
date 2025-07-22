@@ -1,4 +1,4 @@
-package com.designpatterns.strategy.bridge;
+package com.designpatterns.structural.bridge;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;

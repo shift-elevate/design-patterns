@@ -1,4 +1,4 @@
-package com.designpatterns.strategy.bridge;
+package com.designpatterns.structural.bridge;
 
 /**
  * Refined abstraction for Rectangle shape.

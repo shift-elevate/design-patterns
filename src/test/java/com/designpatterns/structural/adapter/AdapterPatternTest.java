@@ -1,4 +1,4 @@
-package com.designpatterns.strategy.adapter;
+package com.designpatterns.structural.adapter;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;

@@ -1,4 +1,4 @@
-package com.designpatterns.strategy.bridge;
+package com.designpatterns.structural.bridge;
 
 /**
  * Concrete implementor for DirectX rendering.

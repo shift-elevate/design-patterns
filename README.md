@@ -54,7 +54,7 @@ design-patterns/
     ├── creational/
     │   ├── factorymethod/
     │   └── builder/
-    └── strategy/
+    └── structural/
         ├── adapter/
         └── bridge/
 ```
@@ -121,15 +121,15 @@ This will launch the main demonstration showing all implemented design patterns.
 
 ### 🔄 Structural Patterns
 
-#### 3. Adapter Pattern (in Strategy Package)
-- **Location**: `src/main/java/com/designpatterns/strategy/adapter/`
+#### 3. Adapter Pattern
+- **Location**: `src/main/java/com/designpatterns/structural/adapter/`
 - **Example**: Legacy Payment System Integration
 - **Demonstrates**: Bridging incompatible interfaces
 - **Key Classes**: `PaymentProcessor`, `LegacyPaymentAdapter`, `LegacyPaymentSystem`, `PaymentService`
 - **Test**: `AdapterPatternTest`
 
 #### 4. Bridge Pattern
-- **Location**: `src/main/java/com/designpatterns/strategy/bridge/`
+- **Location**: `src/main/java/com/designpatterns/structural/bridge/`
 - **Example**: Cross-Platform Drawing System
 - **Demonstrates**: Decoupling abstraction from implementation
 - **Key Classes**: `Shape`, `Circle`, `Rectangle`, `Renderer`, `OpenGLRenderer`, `DirectXRenderer`

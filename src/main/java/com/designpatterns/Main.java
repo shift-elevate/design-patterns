@@ -1,7 +1,7 @@
 package com.designpatterns;
 
 import com.designpatterns.creational.factorymethod.GameLauncher;
-import com.designpatterns.strategy.bridge.DrawingApp;
+import com.designpatterns.structural.bridge.DrawingApp;
 
 public class Main {
     
@@ -26,7 +26,7 @@ public class Main {
         
         System.out.println("\n3. ADAPTER PATTERN");
         System.out.println("-".repeat(40));
-        com.designpatterns.strategy.adapter.ECommerceLauncher.main(args);
+        com.designpatterns.structural.adapter.ECommerceLauncher.main(args);
         
         System.out.println("\n\n4. BRIDGE PATTERN");
         System.out.println("-".repeat(40));

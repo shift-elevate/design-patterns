@@ -1,4 +1,4 @@
-package com.designpatterns.strategy.bridge;
+package com.designpatterns.structural.bridge;
 
 /**
  * Abstraction class for the Bridge pattern.

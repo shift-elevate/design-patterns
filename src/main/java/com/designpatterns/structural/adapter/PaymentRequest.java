@@ -1,4 +1,4 @@
-package com.designpatterns.strategy.adapter;
+package com.designpatterns.structural.adapter;
 
 public class PaymentRequest {
     private final String cardNumber;
