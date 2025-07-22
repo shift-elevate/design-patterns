@@ -55,7 +55,8 @@ design-patterns/
     │   ├── factorymethod/
     │   └── builder/
     └── strategy/
-        └── adapter/
+        ├── adapter/
+        └── bridge/
 ```
 
 **Pattern Organization:**
@@ -127,6 +128,13 @@ This will launch the main demonstration showing all implemented design patterns.
 - **Key Classes**: `PaymentProcessor`, `LegacyPaymentAdapter`, `LegacyPaymentSystem`, `PaymentService`
 - **Test**: `AdapterPatternTest`
 
+#### 4. Bridge Pattern
+- **Location**: `src/main/java/com/designpatterns/strategy/bridge/`
+- **Example**: Cross-Platform Drawing System
+- **Demonstrates**: Decoupling abstraction from implementation
+- **Key Classes**: `Shape`, `Circle`, `Rectangle`, `Renderer`, `OpenGLRenderer`, `DirectXRenderer`
+- **Test**: `BridgePatternTest`
+
 ## 📚 Running Instructions
 
 ### 🎯 **Recommended: Run Main Application for Complete Demo**
@@ -180,6 +188,9 @@ mvn test -Dtest=BuilderPatternTest
 
 # Adapter Pattern
 mvn test -Dtest=AdapterPatternTest
+
+# Bridge Pattern
+mvn test -Dtest=BridgePatternTest
 ```
 
 ### **Generate Test Report**
@@ -208,6 +219,12 @@ Test reports will be available in `target/site/surefire-report.html`
 - Demonstrates transparent translation between incompatible APIs
 - Shows enhanced functionality through adapter layer
 - Includes comprehensive payment processing and validation
+
+### Bridge Pattern
+- Decouples shape abstraction from rendering implementation
+- Supports multiple graphics APIs (OpenGL, DirectX) without subclass explosion
+- Demonstrates runtime renderer switching
+- Shows independent evolution of abstractions and implementations
 
 
 

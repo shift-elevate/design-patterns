@@ -1,6 +1,7 @@
 package com.designpatterns;
 
 import com.designpatterns.creational.factorymethod.GameLauncher;
+import com.designpatterns.strategy.bridge.DrawingApp;
 
 public class Main {
     
@@ -18,9 +19,18 @@ public class Main {
         System.out.println("-".repeat(40));
         com.designpatterns.creational.builder.ECommerceLauncher.main(args);
         
-        System.out.println("\n\n3. ADAPTER PATTERN");
+        // New section for structural patterns
+        System.out.println("\n" + "=".repeat(70));
+        System.out.println("Demonstrating Structural Design Patterns");
+        System.out.println("=".repeat(70));
+        
+        System.out.println("\n3. ADAPTER PATTERN");
         System.out.println("-".repeat(40));
         com.designpatterns.strategy.adapter.ECommerceLauncher.main(args);
+        
+        System.out.println("\n\n4. BRIDGE PATTERN");
+        System.out.println("-".repeat(40));
+        DrawingApp.main(args);
         
         System.out.println("\n" + "=".repeat(70));
         System.out.println("For comprehensive testing and detailed demonstrations:");
@@ -28,6 +38,7 @@ public class Main {
         System.out.println("mvn test -Dtest=FactoryMethodTest");
         System.out.println("mvn test -Dtest=BuilderPatternTest");
         System.out.println("mvn test -Dtest=AdapterPatternTest");
+        System.out.println("mvn test -Dtest=BridgePatternTest");
         System.out.println("=".repeat(70));
     }
 } 
