@@ -53,6 +53,7 @@ design-patterns/
 └── src/main/java/com/designpatterns/
     ├── creational/
     │   ├── factorymethod/
+    │   ├── abstractfactory/
     │   └── builder/
     └── structural/
         ├── adapter/
@@ -112,7 +113,14 @@ This will launch the main demonstration showing all implemented design patterns.
 - **Key Classes**: `GameCharacter`, `CharacterFactory`, `WarriorFactory`, `MageFactory`, `ArcherFactory`, `RogueFactory`
 - **Test**: `FactoryMethodTest`
 
-#### 2. Builder Pattern
+#### 2. Abstract Factory Pattern
+- **Location**: `src/main/java/com/designpatterns/creational/abstractfactory/`
+- **Example**: RPG World Equipment System
+- **Demonstrates**: Creating families of related objects with guaranteed consistency
+- **Key Classes**: `GameCharacter`, `Weapon`, `Armor`, `WorldFactory`, `MedievalFactory`, `SciFiFactory`
+- **Test**: `AbstractFactoryTest`
+
+#### 3. Builder Pattern
 - **Location**: `src/main/java/com/designpatterns/creational/builder/`
 - **Example**: E-Commerce Product Creation System
 - **Demonstrates**: Complex object construction with fluent interface
@@ -121,14 +129,14 @@ This will launch the main demonstration showing all implemented design patterns.
 
 ### 🔄 Structural Patterns
 
-#### 3. Adapter Pattern
+#### 4. Adapter Pattern
 - **Location**: `src/main/java/com/designpatterns/structural/adapter/`
 - **Example**: Legacy Payment System Integration
 - **Demonstrates**: Bridging incompatible interfaces
 - **Key Classes**: `PaymentProcessor`, `LegacyPaymentAdapter`, `LegacyPaymentSystem`, `PaymentService`
 - **Test**: `AdapterPatternTest`
 
-#### 4. Bridge Pattern
+#### 5. Bridge Pattern
 - **Location**: `src/main/java/com/designpatterns/structural/bridge/`
 - **Example**: Cross-Platform Drawing System
 - **Demonstrates**: Decoupling abstraction from implementation
@@ -183,6 +191,9 @@ mvn test
 # Factory Method Pattern
 mvn test -Dtest=FactoryMethodTest
 
+# Abstract Factory Pattern
+mvn test -Dtest=AbstractFactoryTest
+
 # Builder Pattern
 mvn test -Dtest=BuilderPatternTest
 
@@ -207,6 +218,12 @@ Test reports will be available in `target/site/surefire-report.html`
 - Creates different character types (Warrior, Mage, Archer, Rogue) using specialized factories
 - Each character has unique abilities and attributes
 - Demonstrates polymorphic object creation
+
+### Abstract Factory Pattern
+- Creates complete equipment sets (character + weapon + armor) for different worlds
+- Ensures all components belong to the same world/theme (Medieval vs Sci-Fi)
+- Extends Factory Method pattern by creating families of related objects
+- Demonstrates consistency across product families
 
 ### Builder Pattern
 - Constructs complex product objects with many optional parameters
