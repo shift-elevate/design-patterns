@@ -23,16 +23,19 @@ public class Main {
         System.out.println("-".repeat(40));
         com.designpatterns.creational.builder.ECommerceLauncher.main(args);
         
-        // New section for structural patterns
+        System.out.println("\n\n4. PROTOTYPE PATTERN");
+        System.out.println("-".repeat(40));
+        com.designpatterns.creational.prototype.PrototypeDemo.main(args);
+        
         System.out.println("\n" + "=".repeat(70));
         System.out.println("Demonstrating Structural Design Patterns");
         System.out.println("=".repeat(70));
         
-        System.out.println("\n4. ADAPTER PATTERN");
+        System.out.println("\n5. ADAPTER PATTERN");
         System.out.println("-".repeat(40));
         com.designpatterns.structural.adapter.ECommerceLauncher.main(args);
         
-        System.out.println("\n\n5. BRIDGE PATTERN");
+        System.out.println("\n\n6. BRIDGE PATTERN");
         System.out.println("-".repeat(40));
         DrawingApp.main(args);
         
@@ -42,6 +45,7 @@ public class Main {
         System.out.println("mvn test -Dtest=FactoryMethodTest");
         System.out.println("mvn test -Dtest=AbstractFactoryTest");
         System.out.println("mvn test -Dtest=BuilderPatternTest");
+        System.out.println("mvn test -Dtest=PrototypePatternTest");
         System.out.println("mvn test -Dtest=AdapterPatternTest");
         System.out.println("mvn test -Dtest=BridgePatternTest");
         System.out.println("=".repeat(70));

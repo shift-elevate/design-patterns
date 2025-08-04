@@ -54,7 +54,8 @@ design-patterns/
     ├── creational/
     │   ├── factorymethod/
     │   ├── abstractfactory/
-    │   └── builder/
+    │   ├── builder/
+    │   └── prototype/
     └── structural/
         ├── adapter/
         └── bridge/
@@ -127,6 +128,13 @@ This will launch the main demonstration showing all implemented design patterns.
 - **Key Classes**: `Product`, `ProductBuilder`, `StandardProductBuilder`, `PremiumProductBuilder`, `ProductDirector`
 - **Test**: `BuilderPatternTest`
 
+#### 4. Prototype Pattern
+- **Location**: `src/main/java/com/designpatterns/creational/prototype/`
+- **Example**: Document Editor Shape Cloning System
+- **Demonstrates**: Efficient object cloning for performance-critical applications
+- **Key Classes**: `Shape`, `Circle`, `Rectangle`, `PrototypeRegistry`, `PrototypeDemo`
+- **Test**: `PrototypePatternTest`
+
 ### 🔄 Structural Patterns
 
 #### 4. Adapter Pattern
@@ -197,6 +205,9 @@ mvn test -Dtest=AbstractFactoryTest
 # Builder Pattern
 mvn test -Dtest=BuilderPatternTest
 
+# Prototype Pattern
+mvn test -Dtest=PrototypePatternTest
+
 # Adapter Pattern
 mvn test -Dtest=AdapterPatternTest
 
@@ -230,6 +241,12 @@ Test reports will be available in `target/site/surefire-report.html`
 - Uses fluent interface for readable object construction
 - Includes director for common product configurations
 - Supports different product types (Standard, Premium)
+
+### Prototype Pattern
+- Efficiently clones complex objects without expensive construction
+- Demonstrates performance improvement over traditional object creation
+- Includes prototype registry for centralized prototype management
+- Shows independent clone modification and deep cloning concepts
 
 ### Adapter Pattern
 - Integrates legacy payment system with modern payment interface

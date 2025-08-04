@@ -100,13 +100,11 @@ class FactoryMethodTest {
     void testFactoryMethodPattern() {
         System.out.println("\n=== Testing Factory Method Pattern ===");
         
-        // Test that different factories create different character types
         GameCharacter warrior = warriorFactory.createCharacter();
         GameCharacter mage = mageFactory.createCharacter();
         GameCharacter archer = archerFactory.createCharacter();
         GameCharacter rogue = rogueFactory.createCharacter();
         
-        // Verify they are different types
         assertNotEquals(warrior.getClass(), mage.getClass());
         assertNotEquals(warrior.getClass(), archer.getClass());
         assertNotEquals(warrior.getClass(), rogue.getClass());
@@ -114,7 +112,6 @@ class FactoryMethodTest {
         assertNotEquals(mage.getClass(), rogue.getClass());
         assertNotEquals(archer.getClass(), rogue.getClass());
         
-        // Verify they all implement the same interface
         assertTrue(warrior instanceof GameCharacter);
         assertTrue(mage instanceof GameCharacter);
         assertTrue(archer instanceof GameCharacter);
@@ -132,7 +129,6 @@ class FactoryMethodTest {
         
         GameCharacter warrior = warriorFactory.createCharacter();
         
-        // Test that methods don't throw exceptions
         assertDoesNotThrow(() -> {
             warrior.attack();
             warrior.defend();
@@ -151,7 +147,6 @@ class FactoryMethodTest {
         System.out.println("different character types using their respective factories.");
         System.out.println("=".repeat(60));
         
-        // Create characters using factories - client doesn't know specific implementations
         warriorFactory.createAndDisplayCharacter("DragonSlayer");
         System.out.println();
         
@@ -169,7 +164,6 @@ class FactoryMethodTest {
         System.out.println("the common interface without knowing specific implementations.");
         System.out.println("=".repeat(60));
         
-        // All assertions should pass
         assertTrue(true, "Factory Method Pattern demonstration completed successfully");
     }
 } 
