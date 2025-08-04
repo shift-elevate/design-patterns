@@ -1,9 +1,5 @@
 package com.designpatterns.structural.bridge;
 
-/**
- * Concrete implementor for OpenGL rendering.
- * Implements the Renderer interface for OpenGL graphics API.
- */
 public class OpenGLRenderer implements Renderer {
     
     @Override

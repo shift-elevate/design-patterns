@@ -1,6 +1,5 @@
 package com.designpatterns.creational.abstractfactory;
 
-// Medieval World: Extending Factory Method characters
 public class MedievalWarrior implements GameCharacter {
     private int health = 120;
     

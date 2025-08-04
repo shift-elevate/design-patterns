@@ -13,7 +13,6 @@ public class AbstractFactoryTest {
         Weapon weapon = factory.createWeapon();
         Armor armor = factory.createArmor();
         
-        // Verify all products are from the same family
         assertTrue(character instanceof MedievalWarrior);
         assertTrue(weapon instanceof MedievalSword);
         assertTrue(armor instanceof MedievalArmor);
@@ -27,7 +26,6 @@ public class AbstractFactoryTest {
         Weapon weapon = factory.createWeapon();
         Armor armor = factory.createArmor();
         
-        // Verify all products are from the same family
         assertTrue(character instanceof SciFiSoldier);
         assertTrue(weapon instanceof LaserGun);
         assertTrue(armor instanceof SciFiArmor);
@@ -38,8 +36,6 @@ public class AbstractFactoryTest {
         GameCharacter warrior = new MedievalWarrior();
         
         assertEquals(120, warrior.getHealth());
-        // Note: We can't easily test System.out.println output in unit tests
-        // but we can verify the methods don't throw exceptions
         assertDoesNotThrow(() -> warrior.attack());
         assertDoesNotThrow(() -> warrior.defend());
     }

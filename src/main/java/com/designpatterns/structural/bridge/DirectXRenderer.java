@@ -1,9 +1,5 @@
 package com.designpatterns.structural.bridge;
 
-/**
- * Concrete implementor for DirectX rendering.
- * Implements the Renderer interface for DirectX graphics API.
- */
 public class DirectXRenderer implements Renderer {
     
     @Override

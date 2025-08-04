@@ -41,7 +41,6 @@ public class BuilderPatternTest {
         assertTrue(product.getTags().contains("tag1"));
         assertTrue(product.getTags().contains("tag2"));
         
-        // Test that it's actually a StandardProduct
         assertTrue(product instanceof StandardProduct);
     }
     
@@ -63,7 +62,6 @@ public class BuilderPatternTest {
         assertEquals("Premium description", product.getDescription());
         assertTrue(product.getTags().contains("premium"));
         
-        // Test that it's actually a PremiumProduct
         assertTrue(product instanceof PremiumProduct);
         PremiumProduct premiumProduct = (PremiumProduct) product;
         assertEquals(24, premiumProduct.getWarrantyMonths());
@@ -73,17 +71,14 @@ public class BuilderPatternTest {
     @Test
     @DisplayName("Should validate required fields")
     void testValidationRequiredFields() {
-        // Test missing name
         assertThrows(IllegalStateException.class, () -> {
             standardBuilder.setPrice(99.99).build();
         });
         
-        // Test empty name
         assertThrows(IllegalStateException.class, () -> {
             standardBuilder.setName("").setPrice(99.99).build();
         });
         
-        // Test negative price
         assertThrows(IllegalStateException.class, () -> {
             standardBuilder.setName("Test").setPrice(-10.0).build();
         });
@@ -92,8 +87,6 @@ public class BuilderPatternTest {
     @Test
     @DisplayName("Should support fluent interface method chaining")
     void testFluentInterface() {
-        // This test verifies that all methods return the builder instance
-        // enabling method chaining
         Product product = standardBuilder
             .setName("Fluent Test")
             .setPrice(50.0)
@@ -121,11 +114,9 @@ public class BuilderPatternTest {
             .addTag("original")
             .build();
         
-        // Get tags and try to modify them
         var tags = product.getTags();
         tags.add("modified");
         
-        // Original product should remain unchanged
         var originalTags = product.getTags();
         assertEquals(1, originalTags.size());
         assertTrue(originalTags.contains("original"));
@@ -135,7 +126,6 @@ public class BuilderPatternTest {
     @Test
     @DisplayName("Should support builder reuse with reset")
     void testBuilderReuse() {
-        // Create first product
         Product product1 = standardBuilder
             .setName("Product 1")
             .setPrice(100.0)
@@ -143,7 +133,6 @@ public class BuilderPatternTest {
             .addTag("tag1")
             .build();
         
-        // Reset and create second product
         Product product2 = standardBuilder
             .reset()
             .setName("Product 2")
@@ -152,7 +141,6 @@ public class BuilderPatternTest {
             .addTag("tag2")
             .build();
         
-        // Verify both products are different
         assertEquals("Product 1", product1.getName());
         assertEquals("Product 2", product2.getName());
         assertEquals(100.0, product1.getPrice(), 0.01);
@@ -259,7 +247,6 @@ public class BuilderPatternTest {
     @Test
     @DisplayName("Should handle premium builder reset correctly")
     void testPremiumBuilderReset() {
-        // Create first premium product
         Product product1 = premiumBuilder
             .setName("Premium 1")
             .setPrice(500.0)
@@ -268,12 +255,11 @@ public class BuilderPatternTest {
             .setSupportLevel("Premium")
             .build();
         
-        // Reset and create second premium product
         Product product2 = ((PremiumProductBuilder) premiumBuilder.reset())
             .setName("Premium 2")
             .setPrice(600.0)
             .setDescription("Second premium product")
-            .build(); // Should use default warranty and support
+            .build();
         
         PremiumProduct premium1 = (PremiumProduct) product1;
         PremiumProduct premium2 = (PremiumProduct) product2;
@@ -281,8 +267,8 @@ public class BuilderPatternTest {
         assertEquals(36, premium1.getWarrantyMonths());
         assertEquals("Premium", premium1.getSupportLevel());
         
-        assertEquals(12, premium2.getWarrantyMonths()); // Default value
-        assertEquals("Standard", premium2.getSupportLevel()); // Default value
+        assertEquals(12, premium2.getWarrantyMonths());
+        assertEquals("Standard", premium2.getSupportLevel());
     }
     
     @Test
@@ -290,7 +276,6 @@ public class BuilderPatternTest {
     void testCompleteWorkflow() {
         System.out.println("\n=== Builder Pattern Test Output ===");
         
-        // Create products using different approaches
         Product laptop = new StandardProductBuilder()
             .setName("Gaming Laptop Pro")
             .setPrice(1299.99)
@@ -307,9 +292,6 @@ public class BuilderPatternTest {
             "Premium gaming headset with 7.1 surround sound"
         );
         
-        // Display products (removed displayProduct calls since interface simplified)
-        
-        // Verify they were created correctly
         assertEquals("Gaming Laptop Pro", laptop.getName());
         assertEquals("Professional Gaming Headset", premiumHeadset.getName());
         assertEquals(1299.99, laptop.getPrice(), 0.01);

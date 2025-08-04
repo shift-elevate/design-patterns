@@ -1,6 +1,5 @@
 package com.designpatterns.creational.abstractfactory;
 
-// Sci-Fi World: New character types for this world
 public class SciFiSoldier implements GameCharacter {
     private int health = 100;
     

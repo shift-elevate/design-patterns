@@ -2,7 +2,6 @@ package com.designpatterns.creational.abstractfactory;
 
 public class GameLauncher {
     public static void main(String[] args) {
-        // Create complete Medieval equipment set
         WorldFactory medievalFactory = new MedievalFactory();
         GameCharacter medievalHero = medievalFactory.createCharacter();
         Weapon medievalWeapon = medievalFactory.createWeapon();
@@ -15,7 +14,6 @@ public class GameLauncher {
         medievalHero.defend();
 
         System.out.println("\n=== Sci-Fi World Equipment Set ===");
-        // Create complete Sci-Fi equipment set
         WorldFactory sciFiFactory = new SciFiFactory();
         GameCharacter sciFiHero = sciFiFactory.createCharacter();
         Weapon sciFiWeapon = sciFiFactory.createWeapon();

@@ -55,9 +55,8 @@ public class AdapterPatternTest {
         
         assertTrue(adapter.validatePayment(validRequest));
         
-        // Test invalid card number
         PaymentRequest invalidCard = new PaymentRequest(
-            "1234", // Too short
+            "1234",
             "12/25",
             99.99
         );
@@ -79,7 +78,6 @@ public class AdapterPatternTest {
     @Test
     @DisplayName("Should handle payment amount limits correctly")
     void testPaymentAmountLimits() {
-        // Test valid amount
         PaymentRequest validAmount = new PaymentRequest(
             "1234567890123456",
             "12/25",
@@ -88,7 +86,6 @@ public class AdapterPatternTest {
         
         assertTrue(adapter.validatePayment(validAmount));
         
-        // Test amount exceeding legacy limit
         PaymentRequest excessiveAmount = new PaymentRequest(
             "1234567890123456",
             "12/25",
@@ -97,7 +94,6 @@ public class AdapterPatternTest {
         
         assertFalse(adapter.validatePayment(excessiveAmount));
         
-        // Test negative amount
         PaymentRequest negativeAmount = new PaymentRequest(
             "1234567890123456",
             "12/25",
@@ -110,15 +106,12 @@ public class AdapterPatternTest {
     @Test
     @DisplayName("Should calculate transaction fees correctly")
     void testTransactionFeeCalculation() {
-        // Test fee for amount over $100 (2.5%)
         double fee1 = adapter.calculateTransactionFee(200.00);
         assertEquals(5.00, fee1, 0.01);
         
-        // Test fee for amount under $100 (1.5%)
         double fee2 = adapter.calculateTransactionFee(50.00);
         assertEquals(0.75, fee2, 0.01);
         
-        // Test fee for exactly $100 (1.5%)
         double fee3 = adapter.calculateTransactionFee(100.00);
         assertEquals(1.50, fee3, 0.01);
     }
@@ -126,7 +119,6 @@ public class AdapterPatternTest {
     @Test
     @DisplayName("Should handle legacy system failures gracefully")
     void testLegacySystemFailures() {
-        // Test with invalid card that legacy system will reject
         PaymentRequest invalidRequest = new PaymentRequest(
             "invalid",
             "invalid",
@@ -161,12 +153,10 @@ public class AdapterPatternTest {
     @Test
     @DisplayName("Should handle PaymentService validation failures")
     void testPaymentServiceValidationFailures() {
-        // Test null request
         PaymentResult nullResult = paymentService.processCustomerPayment(null);
         assertFalse(nullResult.isSuccess());
         assertEquals("Payment request cannot be null", nullResult.getMessage());
         
-        // Test negative amount
         PaymentRequest negativeRequest = new PaymentRequest(
             "1234567890123456",
             "12/25",
@@ -177,7 +167,6 @@ public class AdapterPatternTest {
         assertFalse(negativeResult.isSuccess());
         assertEquals("Payment amount must be positive", negativeResult.getMessage());
         
-        // Test invalid card
         PaymentRequest invalidRequest = new PaymentRequest(
             "1234",
             "12/25",
@@ -192,7 +181,6 @@ public class AdapterPatternTest {
     @Test
     @DisplayName("Should process refunds correctly")
     void testRefundProcessing() {
-        // First create a successful payment
         PaymentRequest request = new PaymentRequest(
             "1234567890123456",
             "12/25",
@@ -202,7 +190,6 @@ public class AdapterPatternTest {
         PaymentResult paymentResult = paymentService.processCustomerPayment(request);
         assertTrue(paymentResult.isSuccess());
         
-        // Now test refund
         PaymentResult refundResult = paymentService.processRefund(
             paymentResult.getTransactionId(),
             25.00,
@@ -218,11 +205,9 @@ public class AdapterPatternTest {
     @Test
     @DisplayName("Should handle invalid refund requests")
     void testInvalidRefundRequests() {
-        // Test refund with null transaction ID
         PaymentResult nullRefund = paymentService.processRefund(null, 25.00, "Refund");
         assertFalse(nullRefund.isSuccess());
         
-        // Test refund with negative amount
         PaymentResult negativeRefund = paymentService.processRefund("TXN_123", -25.00, "Refund");
         assertFalse(negativeRefund.isSuccess());
     }
@@ -230,7 +215,6 @@ public class AdapterPatternTest {
     @Test
     @DisplayName("Should validate payments without processing")
     void testValidationOnly() {
-        // Test valid payment validation
         PaymentRequest validRequest = new PaymentRequest(
             "1234567890123456",
             "12/25",
@@ -239,7 +223,6 @@ public class AdapterPatternTest {
         
         assertTrue(paymentService.validatePaymentOnly(validRequest));
         
-        // Test invalid payment validation
         PaymentRequest invalidRequest = new PaymentRequest(
             "1234",
             "12/25",
@@ -248,10 +231,8 @@ public class AdapterPatternTest {
         
         assertFalse(paymentService.validatePaymentOnly(invalidRequest));
         
-        // Test null request
         assertFalse(paymentService.validatePaymentOnly(null));
         
-        // Test negative amount
         PaymentRequest negativeRequest = new PaymentRequest(
             "1234567890123456",
             "12/25",
@@ -274,17 +255,14 @@ public class AdapterPatternTest {
     void testAdapterPatternDemo() {
         System.out.println("\n=== Adapter Pattern Demo Test ===");
         
-        // Create payment request
         PaymentRequest request = new PaymentRequest(
             "1234567890123456",
             "12/25",
             199.99
         );
         
-        // Process payment through adapter
         PaymentResult result = paymentService.processCustomerPayment(request);
         
-        // Verify successful processing
         assertTrue(result.isSuccess());
         assertNotNull(result.getTransactionId());
         assertEquals(199.99, result.getAmount(), 0.01);
@@ -293,10 +271,8 @@ public class AdapterPatternTest {
         System.out.println("✓ Enhanced functionality added by adapter");
         System.out.println("✓ Transparent integration achieved");
         
-        // Test validation
         assertTrue(paymentService.validatePaymentOnly(request));
         
-        // Test adapter-specific functionality
         if (paymentService.getPaymentProcessor() instanceof LegacyPaymentAdapter) {
             LegacyPaymentAdapter adapter = (LegacyPaymentAdapter) paymentService.getPaymentProcessor();
             double fee = adapter.calculateTransactionFee(199.99);
@@ -318,6 +294,6 @@ public class AdapterPatternTest {
         assertTrue(toString.contains("1234****3456"));
         assertTrue(toString.contains("12/25"));
         assertTrue(toString.contains("99.99"));
-        assertFalse(toString.contains("1234567890123456")); // Should be masked
+        assertFalse(toString.contains("1234567890123456"));
     }
 } 
