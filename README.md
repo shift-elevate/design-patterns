@@ -60,6 +60,7 @@ design-patterns/
         ├── adapter/
         ├── bridge/
         └── composite/
+        └── facade/
 ```
 
 **Pattern Organization:**
