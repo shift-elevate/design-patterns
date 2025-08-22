@@ -58,7 +58,8 @@ design-patterns/
     │   └── prototype/
     └── structural/
         ├── adapter/
-        └── bridge/
+        ├── bridge/
+        └── composite/
 ```
 
 **Pattern Organization:**
@@ -151,6 +152,13 @@ This will launch the main demonstration showing all implemented design patterns.
 - **Key Classes**: `Shape`, `Circle`, `Rectangle`, `Renderer`, `OpenGLRenderer`, `DirectXRenderer`
 - **Test**: `BridgePatternTest`
 
+#### 5. Composite Pattern
+- **Location**: `src/main/java/com/designpatterns/structural/composite/`
+- **Example**: Organizational Chart System
+- **Demonstrates**: Treating individual objects and compositions uniformly
+- **Key Classes**: `Employee`, `IndividualContributor`, `Manager`, `OrganizationalChart`
+- **Test**: `CompositePatternTest`
+
 ## 📚 Running Instructions
 
 ### 🎯 **Recommended: Run Main Application for Complete Demo**
@@ -213,6 +221,9 @@ mvn test -Dtest=AdapterPatternTest
 
 # Bridge Pattern
 mvn test -Dtest=BridgePatternTest
+
+# Composite Pattern
+mvn test -Dtest=CompositePatternTest
 ```
 
 ### **Generate Test Report**
@@ -259,6 +270,11 @@ Test reports will be available in `target/site/surefire-report.html`
 - Supports multiple graphics APIs (OpenGL, DirectX) without subclass explosion
 - Demonstrates runtime renderer switching
 - Shows independent evolution of abstractions and implementations
+
+### Composite Pattern
+- Treats individual employees and team compositions uniformly
+- Demonstrates hierarchical organizational structures
+- Eliminates type checking and scattered logic in hierarchical operations
 
 
 

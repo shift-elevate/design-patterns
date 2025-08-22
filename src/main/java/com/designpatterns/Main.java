@@ -39,6 +39,10 @@ public class Main {
         System.out.println("-".repeat(40));
         DrawingApp.main(args);
         
+        System.out.println("\n\n5. COMPOSITE PATTERN");
+        System.out.println("-".repeat(40));
+        com.designpatterns.structural.composite.OrganizationalChart.main(args);
+        
         System.out.println("\n" + "=".repeat(70));
         System.out.println("For comprehensive testing and detailed demonstrations:");
         System.out.println("mvn test                    # Run all tests");
@@ -48,6 +52,7 @@ public class Main {
         System.out.println("mvn test -Dtest=PrototypePatternTest");
         System.out.println("mvn test -Dtest=AdapterPatternTest");
         System.out.println("mvn test -Dtest=BridgePatternTest");
+        System.out.println("mvn test -Dtest=CompositePatternTest");
         System.out.println("=".repeat(70));
     }
 } 
