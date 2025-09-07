@@ -159,9 +159,7 @@ class FactoryMethodTest {
         rogueFactory.createAndDisplayCharacter("ShadowBlade");
         
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("✅ DEMO COMPLETE!");
-        System.out.println("Notice how the client code works with factories through");
-        System.out.println("the common interface without knowing specific implementations.");
+        System.out.println("✅ FACTORY METHOD PATTERN DEMONSTRATION COMPLETE!");
         System.out.println("=".repeat(60));
         
         assertTrue(true, "Factory Method Pattern demonstration completed successfully");

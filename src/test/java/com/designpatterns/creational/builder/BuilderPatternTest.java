@@ -274,7 +274,9 @@ public class BuilderPatternTest {
     @Test
     @DisplayName("Should demonstrate complete builder pattern workflow")
     void testCompleteWorkflow() {
-        System.out.println("\n=== Builder Pattern Test Output ===");
+        System.out.println("\n" + "=".repeat(60));
+        System.out.println("🏗️ BUILDER PATTERN DEMONSTRATION");
+        System.out.println("=".repeat(60));
         
         Product laptop = new StandardProductBuilder()
             .setName("Gaming Laptop Pro")
@@ -297,6 +299,8 @@ public class BuilderPatternTest {
         assertEquals(1299.99, laptop.getPrice(), 0.01);
         assertEquals(299.99, premiumHeadset.getPrice(), 0.01);
         
-        System.out.println("=== Builder Pattern Test Complete ===\n");
+        System.out.println("\n" + "=".repeat(60));
+        System.out.println("✅ BUILDER PATTERN DEMONSTRATION COMPLETE!");
+        System.out.println("=".repeat(60));
     }
 } 

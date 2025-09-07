@@ -253,7 +253,9 @@ public class AdapterPatternTest {
     @Test
     @DisplayName("Should demonstrate adapter pattern benefits")
     void testAdapterPatternDemo() {
-        System.out.println("\n=== Adapter Pattern Demo Test ===");
+        System.out.println("\n" + "=".repeat(60));
+        System.out.println("🔌 ADAPTER PATTERN DEMONSTRATION");
+        System.out.println("=".repeat(60));
         
         PaymentRequest request = new PaymentRequest(
             "1234567890123456",
@@ -278,6 +280,10 @@ public class AdapterPatternTest {
             double fee = adapter.calculateTransactionFee(199.99);
             assertEquals(5.00, fee, 0.01);
         }
+        
+        System.out.println("\n" + "=".repeat(60));
+        System.out.println("✅ ADAPTER PATTERN DEMONSTRATION COMPLETE!");
+        System.out.println("=".repeat(60));
     }
     
     @Test

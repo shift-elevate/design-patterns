@@ -113,6 +113,7 @@ This will launch the main demonstration showing all implemented design patterns.
 - **Example**: RPG Character Creation System
 - **Demonstrates**: Object creation without specifying exact classes
 - **Key Classes**: `GameCharacter`, `CharacterFactory`, `WarriorFactory`, `MageFactory`, `ArcherFactory`, `RogueFactory`
+- **Launcher**: `GameLauncher`
 - **Test**: `FactoryMethodTest`
 
 #### 2. Abstract Factory Pattern
@@ -120,6 +121,7 @@ This will launch the main demonstration showing all implemented design patterns.
 - **Example**: RPG World Equipment System
 - **Demonstrates**: Creating families of related objects with guaranteed consistency
 - **Key Classes**: `GameCharacter`, `Weapon`, `Armor`, `WorldFactory`, `MedievalFactory`, `SciFiFactory`
+- **Launcher**: `GameLauncher`
 - **Test**: `AbstractFactoryTest`
 
 #### 3. Builder Pattern
@@ -127,13 +129,15 @@ This will launch the main demonstration showing all implemented design patterns.
 - **Example**: E-Commerce Product Creation System
 - **Demonstrates**: Complex object construction with fluent interface
 - **Key Classes**: `Product`, `ProductBuilder`, `StandardProductBuilder`, `PremiumProductBuilder`, `ProductDirector`
+- **Launcher**: `ECommerceLauncher`
 - **Test**: `BuilderPatternTest`
 
 #### 4. Prototype Pattern
 - **Location**: `src/main/java/com/designpatterns/creational/prototype/`
 - **Example**: Document Editor Shape Cloning System
 - **Demonstrates**: Efficient object cloning for performance-critical applications
-- **Key Classes**: `Shape`, `Circle`, `Rectangle`, `PrototypeRegistry`, `PrototypeDemo`
+- **Key Classes**: `Shape`, `Circle`, `Rectangle`, `PrototypeRegistry`
+- **Launcher**: `PrototypeLauncher`
 - **Test**: `PrototypePatternTest`
 
 ### 🔄 Structural Patterns
@@ -143,6 +147,7 @@ This will launch the main demonstration showing all implemented design patterns.
 - **Example**: Legacy Payment System Integration
 - **Demonstrates**: Bridging incompatible interfaces
 - **Key Classes**: `PaymentProcessor`, `LegacyPaymentAdapter`, `LegacyPaymentSystem`, `PaymentService`
+- **Launcher**: `ECommerceLauncher`
 - **Test**: `AdapterPatternTest`
 
 #### 5. Bridge Pattern
@@ -150,13 +155,15 @@ This will launch the main demonstration showing all implemented design patterns.
 - **Example**: Cross-Platform Drawing System
 - **Demonstrates**: Decoupling abstraction from implementation
 - **Key Classes**: `Shape`, `Circle`, `Rectangle`, `Renderer`, `OpenGLRenderer`, `DirectXRenderer`
+- **Launcher**: `BridgeLauncher`
 - **Test**: `BridgePatternTest`
 
-#### 5. Composite Pattern
+#### 6. Composite Pattern
 - **Location**: `src/main/java/com/designpatterns/structural/composite/`
 - **Example**: Organizational Chart System
 - **Demonstrates**: Treating individual objects and compositions uniformly
 - **Key Classes**: `Employee`, `IndividualContributor`, `Manager`, `OrganizationalChart`
+- **Launcher**: `CompositeLauncher`
 - **Test**: `CompositePatternTest`
 
 ## 📚 Running Instructions
@@ -226,13 +233,35 @@ mvn test -Dtest=BridgePatternTest
 mvn test -Dtest=CompositePatternTest
 ```
 
-### **Generate Test Report**
+## 🚀 Running Launcher Classes
+
+### **Run Specific Launcher Class**
 
 ```bash
-mvn surefire-report:report
-```
+# Factory Method Pattern
+mvn exec:java -Dexec.mainClass="com.designpatterns.creational.factorymethod.GameLauncher"
 
-Test reports will be available in `target/site/surefire-report.html`
+# Abstract Factory Pattern
+mvn exec:java -Dexec.mainClass="com.designpatterns.creational.abstractfactory.GameLauncher"
+
+# Builder Pattern
+mvn exec:java -Dexec.mainClass="com.designpatterns.creational.builder.ECommerceLauncher"
+
+# Prototype Pattern
+mvn exec:java -Dexec.mainClass="com.designpatterns.creational.prototype.PrototypeLauncher"
+
+# Adapter Pattern
+mvn exec:java -Dexec.mainClass="com.designpatterns.structural.adapter.ECommerceLauncher"
+
+# Bridge Pattern
+mvn exec:java -Dexec.mainClass="com.designpatterns.structural.bridge.BridgeLauncher"
+
+# Composite Pattern
+mvn exec:java -Dexec.mainClass="com.designpatterns.structural.composite.CompositeLauncher"
+
+# Command Pattern
+mvn exec:java -Dexec.mainClass="com.designpatterns.behavioural.command.SmartHomeLauncher"
+```
 
 ## 🎯 Pattern Demonstrations
 
