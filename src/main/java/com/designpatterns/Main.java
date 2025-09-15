@@ -49,6 +49,10 @@ public class Main {
         System.out.println("-".repeat(40));
         com.designpatterns.structural.facade.CodeEditorClient.main(args);
         
+        System.out.println("\n\nFLYWEIGHT PATTERN");
+        System.out.println("-".repeat(40));
+        com.designpatterns.structural.flyweight.FlyweightLauncher.main(args);
+        
         System.out.println("\n" + "=".repeat(70));
         System.out.println("For comprehensive testing and detailed demonstrations:");
         System.out.println("mvn test                    # Run all tests");
@@ -60,6 +64,7 @@ public class Main {
         System.out.println("mvn test -Dtest=CompositePatternTest");
         System.out.println("mvn test -Dtest=BridgePatternTest");
         System.out.println("mvn test -Dtest=FacadePatternTest");
+        System.out.println("mvn test -Dtest=FlyweightPatternTest");
         System.out.println("=".repeat(70));
     }
 } 

@@ -8,7 +8,6 @@ An educational Maven project demonstrating various design patterns in Java with 
 - [Prerequisites](#prerequisites) 
 - [Project Structure](#project-structure)
 - [Quick Start](#quick-start)
-- [Available Design Patterns](#available-design-patterns)
 - [Running Instructions](#running-instructions)
 - [Testing](#testing)
 - [Contributing](#contributing)
@@ -56,11 +55,14 @@ design-patterns/
     │   ├── abstractfactory/
     │   ├── builder/
     │   └── prototype/
-    └── structural/
-        ├── adapter/
-        ├── bridge/
-        └── composite/
-        └── facade/
+    ├── structural/
+    │   ├── adapter/
+    │   ├── bridge/
+    │   ├── composite/
+    │   ├── facade/
+    │   └── flyweight/
+    └── behavioural/
+        └── command/
 ```
 
 **Pattern Organization:**
@@ -104,68 +106,6 @@ mvn exec:java -Dexec.mainClass="com.designpatterns.Main"
 ```
 
 This will launch the main demonstration showing all implemented design patterns.
-
-## 🎮 Available Design Patterns
-
-### 🏗️ Creational Patterns
-
-#### 1. Factory Method Pattern
-- **Location**: `src/main/java/com/designpatterns/creational/factorymethod/`
-- **Example**: RPG Character Creation System
-- **Demonstrates**: Object creation without specifying exact classes
-- **Key Classes**: `GameCharacter`, `CharacterFactory`, `WarriorFactory`, `MageFactory`, `ArcherFactory`, `RogueFactory`
-- **Launcher**: `GameLauncher`
-- **Test**: `FactoryMethodTest`
-
-#### 2. Abstract Factory Pattern
-- **Location**: `src/main/java/com/designpatterns/creational/abstractfactory/`
-- **Example**: RPG World Equipment System
-- **Demonstrates**: Creating families of related objects with guaranteed consistency
-- **Key Classes**: `GameCharacter`, `Weapon`, `Armor`, `WorldFactory`, `MedievalFactory`, `SciFiFactory`
-- **Launcher**: `GameLauncher`
-- **Test**: `AbstractFactoryTest`
-
-#### 3. Builder Pattern
-- **Location**: `src/main/java/com/designpatterns/creational/builder/`
-- **Example**: E-Commerce Product Creation System
-- **Demonstrates**: Complex object construction with fluent interface
-- **Key Classes**: `Product`, `ProductBuilder`, `StandardProductBuilder`, `PremiumProductBuilder`, `ProductDirector`
-- **Launcher**: `ECommerceLauncher`
-- **Test**: `BuilderPatternTest`
-
-#### 4. Prototype Pattern
-- **Location**: `src/main/java/com/designpatterns/creational/prototype/`
-- **Example**: Document Editor Shape Cloning System
-- **Demonstrates**: Efficient object cloning for performance-critical applications
-- **Key Classes**: `Shape`, `Circle`, `Rectangle`, `PrototypeRegistry`
-- **Launcher**: `PrototypeLauncher`
-- **Test**: `PrototypePatternTest`
-
-### 🔄 Structural Patterns
-
-#### 4. Adapter Pattern
-- **Location**: `src/main/java/com/designpatterns/structural/adapter/`
-- **Example**: Legacy Payment System Integration
-- **Demonstrates**: Bridging incompatible interfaces
-- **Key Classes**: `PaymentProcessor`, `LegacyPaymentAdapter`, `LegacyPaymentSystem`, `PaymentService`
-- **Launcher**: `ECommerceLauncher`
-- **Test**: `AdapterPatternTest`
-
-#### 5. Bridge Pattern
-- **Location**: `src/main/java/com/designpatterns/structural/bridge/`
-- **Example**: Cross-Platform Drawing System
-- **Demonstrates**: Decoupling abstraction from implementation
-- **Key Classes**: `Shape`, `Circle`, `Rectangle`, `Renderer`, `OpenGLRenderer`, `DirectXRenderer`
-- **Launcher**: `BridgeLauncher`
-- **Test**: `BridgePatternTest`
-
-#### 6. Composite Pattern
-- **Location**: `src/main/java/com/designpatterns/structural/composite/`
-- **Example**: Organizational Chart System
-- **Demonstrates**: Treating individual objects and compositions uniformly
-- **Key Classes**: `Employee`, `IndividualContributor`, `Manager`, `OrganizationalChart`
-- **Launcher**: `CompositeLauncher`
-- **Test**: `CompositePatternTest`
 
 ## 📚 Running Instructions
 
@@ -232,6 +172,15 @@ mvn test -Dtest=BridgePatternTest
 
 # Composite Pattern
 mvn test -Dtest=CompositePatternTest
+
+# Facade Pattern
+mvn test -Dtest=FacadePatternTest
+
+# Flyweight Pattern
+mvn test -Dtest=FlyweightPatternTest
+
+# Command Pattern
+mvn test -Dtest=CommandPatternTest
 ```
 
 ## 🚀 Running Launcher Classes
@@ -260,52 +209,15 @@ mvn exec:java -Dexec.mainClass="com.designpatterns.structural.bridge.BridgeLaunc
 # Composite Pattern
 mvn exec:java -Dexec.mainClass="com.designpatterns.structural.composite.CompositeLauncher"
 
+# Facade Pattern
+mvn exec:java -Dexec.mainClass="com.designpatterns.structural.facade.CodeEditorClient"
+
+# Flyweight Pattern
+mvn exec:java -Dexec.mainClass="com.designpatterns.structural.flyweight.FlyweightLauncher"
+
 # Command Pattern
 mvn exec:java -Dexec.mainClass="com.designpatterns.behavioural.command.SmartHomeLauncher"
 ```
-
-## 🎯 Pattern Demonstrations
-
-### Factory Method Pattern
-- Creates different character types (Warrior, Mage, Archer, Rogue) using specialized factories
-- Each character has unique abilities and attributes
-- Demonstrates polymorphic object creation
-
-### Abstract Factory Pattern
-- Creates complete equipment sets (character + weapon + armor) for different worlds
-- Ensures all components belong to the same world/theme (Medieval vs Sci-Fi)
-- Extends Factory Method pattern by creating families of related objects
-- Demonstrates consistency across product families
-
-### Builder Pattern
-- Constructs complex product objects with many optional parameters
-- Uses fluent interface for readable object construction
-- Includes director for common product configurations
-- Supports different product types (Standard, Premium)
-
-### Prototype Pattern
-- Efficiently clones complex objects without expensive construction
-- Demonstrates performance improvement over traditional object creation
-- Includes prototype registry for centralized prototype management
-- Shows independent clone modification and deep cloning concepts
-
-### Adapter Pattern
-- Integrates legacy payment system with modern payment interface
-- Demonstrates transparent translation between incompatible APIs
-- Shows enhanced functionality through adapter layer
-- Includes comprehensive payment processing and validation
-
-### Bridge Pattern
-- Decouples shape abstraction from rendering implementation
-- Supports multiple graphics APIs (OpenGL, DirectX) without subclass explosion
-- Demonstrates runtime renderer switching
-- Shows independent evolution of abstractions and implementations
-
-### Composite Pattern
-- Treats individual employees and team compositions uniformly
-- Demonstrates hierarchical organizational structures
-- Eliminates type checking and scattered logic in hierarchical operations
-
 
 
 ## 🐛 Troubleshooting
