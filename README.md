@@ -62,6 +62,7 @@ design-patterns/
     │   ├── facade/
     │   └── flyweight/
     └── behavioural/
+        ├── observer/
         └── command/
 ```
 
@@ -151,6 +152,8 @@ mvn test
 
 ### **Run Specific Test Class**
 
+#### 🏗️ **Creational Patterns**
+
 ```bash
 # Factory Method Pattern
 mvn test -Dtest=FactoryMethodTest
@@ -163,7 +166,11 @@ mvn test -Dtest=BuilderPatternTest
 
 # Prototype Pattern
 mvn test -Dtest=PrototypePatternTest
+```
 
+#### 🏛️ **Structural Patterns**
+
+```bash
 # Adapter Pattern
 mvn test -Dtest=AdapterPatternTest
 
@@ -178,6 +185,13 @@ mvn test -Dtest=FacadePatternTest
 
 # Flyweight Pattern
 mvn test -Dtest=FlyweightPatternTest
+```
+
+#### 🎭 **Behavioural Patterns**
+
+```bash
+# Observer Pattern
+mvn test -Dtest=ObserverPatternTest
 
 # Command Pattern
 mvn test -Dtest=CommandPatternTest
@@ -186,6 +200,8 @@ mvn test -Dtest=CommandPatternTest
 ## 🚀 Running Launcher Classes
 
 ### **Run Specific Launcher Class**
+
+#### 🏗️ **Creational Patterns**
 
 ```bash
 # Factory Method Pattern
@@ -199,7 +215,11 @@ mvn exec:java -Dexec.mainClass="com.designpatterns.creational.builder.ECommerceL
 
 # Prototype Pattern
 mvn exec:java -Dexec.mainClass="com.designpatterns.creational.prototype.PrototypeLauncher"
+```
 
+#### 🏛️ **Structural Patterns**
+
+```bash
 # Adapter Pattern
 mvn exec:java -Dexec.mainClass="com.designpatterns.structural.adapter.ECommerceLauncher"
 
@@ -214,6 +234,13 @@ mvn exec:java -Dexec.mainClass="com.designpatterns.structural.facade.CodeEditorC
 
 # Flyweight Pattern
 mvn exec:java -Dexec.mainClass="com.designpatterns.structural.flyweight.FlyweightLauncher"
+```
+
+#### 🎭 **Behavioural Patterns**
+
+```bash
+# Observer Pattern
+mvn exec:java -Dexec.mainClass="com.designpatterns.behavioural.observer.ObserverLauncher"
 
 # Command Pattern
 mvn exec:java -Dexec.mainClass="com.designpatterns.behavioural.command.SmartHomeLauncher"
