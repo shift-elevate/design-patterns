@@ -63,7 +63,8 @@ design-patterns/
     │   └── flyweight/
     └── behavioural/
         ├── observer/
-        └── command/
+        ├── command/
+        └── state/
 ```
 
 **Pattern Organization:**
@@ -195,6 +196,9 @@ mvn test -Dtest=ObserverPatternTest
 
 # Command Pattern
 mvn test -Dtest=CommandPatternTest
+
+# State Pattern
+mvn test -Dtest=StatePatternTest
 ```
 
 ## 🚀 Running Launcher Classes
@@ -244,6 +248,9 @@ mvn exec:java -Dexec.mainClass="com.designpatterns.behavioural.observer.Observer
 
 # Command Pattern
 mvn exec:java -Dexec.mainClass="com.designpatterns.behavioural.command.SmartHomeLauncher"
+
+# State Pattern
+mvn exec:java -Dexec.mainClass="com.designpatterns.behavioural.state.DocumentWorkflowLauncher"
 ```
 
 
