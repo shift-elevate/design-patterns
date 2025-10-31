@@ -59,6 +59,7 @@ design-patterns/
     │   ├── adapter/
     │   ├── bridge/
     │   ├── composite/
+    │   ├── decorator/
     │   ├── facade/
     │   └── flyweight/
     └── behavioural/
@@ -181,6 +182,9 @@ mvn test -Dtest=BridgePatternTest
 # Composite Pattern
 mvn test -Dtest=CompositePatternTest
 
+# Decorator Pattern
+mvn test -Dtest=DecoratorPatternTest
+
 # Facade Pattern
 mvn test -Dtest=FacadePatternTest
 
@@ -232,6 +236,9 @@ mvn exec:java -Dexec.mainClass="com.designpatterns.structural.bridge.BridgeLaunc
 
 # Composite Pattern
 mvn exec:java -Dexec.mainClass="com.designpatterns.structural.composite.CompositeLauncher"
+
+# Decorator Pattern
+mvn exec:java -Dexec.mainClass="com.designpatterns.structural.decorator.CoffeeShopLauncher"
 
 # Facade Pattern
 mvn exec:java -Dexec.mainClass="com.designpatterns.structural.facade.CodeEditorClient"

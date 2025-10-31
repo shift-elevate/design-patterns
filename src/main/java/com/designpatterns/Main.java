@@ -53,7 +53,11 @@ public class Main {
         System.out.println("\n\nCOMPOSITE PATTERN");
         System.out.println("-".repeat(40));
         com.designpatterns.structural.composite.OrganizationalChart.main(args);
-        
+
+        System.out.println("\n\nDECORATOR PATTERN");
+        System.out.println("-".repeat(40));
+        com.designpatterns.structural.decorator.CoffeeShopLauncher.main(args);
+
         System.out.println("\n\nBRIDGE PATTERN");
         System.out.println("-".repeat(40));
         DrawingApp.main(args);
@@ -77,6 +81,7 @@ public class Main {
         System.out.println("mvn test -Dtest=CommandPatternTest");
         System.out.println("mvn test -Dtest=AdapterPatternTest");
         System.out.println("mvn test -Dtest=CompositePatternTest");
+        System.out.println("mvn test -Dtest=DecoratorPatternTest");
         System.out.println("mvn test -Dtest=BridgePatternTest");
         System.out.println("mvn test -Dtest=FacadePatternTest");
         System.out.println("mvn test -Dtest=FlyweightPatternTest");
