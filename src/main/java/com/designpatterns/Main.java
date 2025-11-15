@@ -40,7 +40,11 @@ public class Main {
         System.out.println("\n\nCOMMAND PATTERN");
         System.out.println("-".repeat(40));
         com.designpatterns.behavioural.command.SmartHomeLauncher.main(args);
-        
+
+        System.out.println("\n\nITERATOR PATTERN");
+        System.out.println("-".repeat(40));
+        com.designpatterns.behavioural.iterator.MusicPlayerLauncher.main(args);
+
         System.out.println("\n" + "=".repeat(70));
         
         System.out.println("STRUCTURAL PATTERNS:");
@@ -79,6 +83,7 @@ public class Main {
         System.out.println("mvn test -Dtest=PrototypePatternTest");
         System.out.println("mvn test -Dtest=ObserverPatternTest");
         System.out.println("mvn test -Dtest=CommandPatternTest");
+        System.out.println("mvn test -Dtest=IteratorPatternTest");
         System.out.println("mvn test -Dtest=AdapterPatternTest");
         System.out.println("mvn test -Dtest=CompositePatternTest");
         System.out.println("mvn test -Dtest=DecoratorPatternTest");

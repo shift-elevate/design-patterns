@@ -65,6 +65,7 @@ design-patterns/
     └── behavioural/
         ├── observer/
         ├── command/
+        ├── iterator/
         └── state/
 ```
 
@@ -201,6 +202,9 @@ mvn test -Dtest=ObserverPatternTest
 # Command Pattern
 mvn test -Dtest=CommandPatternTest
 
+# Iterator Pattern
+mvn test -Dtest=IteratorPatternTest
+
 # State Pattern
 mvn test -Dtest=StatePatternTest
 ```
@@ -255,6 +259,9 @@ mvn exec:java -Dexec.mainClass="com.designpatterns.behavioural.observer.Observer
 
 # Command Pattern
 mvn exec:java -Dexec.mainClass="com.designpatterns.behavioural.command.SmartHomeLauncher"
+
+# Iterator Pattern
+mvn exec:java -Dexec.mainClass="com.designpatterns.behavioural.iterator.MusicPlayerLauncher"
 
 # State Pattern
 mvn exec:java -Dexec.mainClass="com.designpatterns.behavioural.state.DocumentWorkflowLauncher"
