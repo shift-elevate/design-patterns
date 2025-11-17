@@ -50,6 +50,10 @@ public class PrototypeDemo {
         
         System.out.println("\n4. Deep vs Shallow Cloning:");
         demonstrateDeepCloning();
+
+        System.out.println("\n" + "=".repeat(60));
+        System.out.println("PROTOTYPE PATTERN DEMONSTRATION COMPLETE!");
+        System.out.println("=".repeat(60));
     }
     
     private static void demonstratePerformanceComparison() {

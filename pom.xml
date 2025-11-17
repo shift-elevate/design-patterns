@@ -50,9 +50,6 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>${maven.exec.plugin.version}</version>
-                <configuration>
-                    <mainClass>com.designpatterns.Main</mainClass>
-                </configuration>
                 <executions>
                     <!-- Factory Method Pattern -->
                     <execution>

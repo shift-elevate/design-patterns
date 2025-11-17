@@ -1,7 +1,7 @@
 package com.designpatterns;
 
 import com.designpatterns.creational.factorymethod.GameLauncher;
-import com.designpatterns.structural.bridge.DrawingApp;
+import com.designpatterns.structural.bridge.BridgeLauncher;
 
 public class Main {
     
@@ -64,7 +64,7 @@ public class Main {
 
         System.out.println("\n\nBRIDGE PATTERN");
         System.out.println("-".repeat(40));
-        DrawingApp.main(args);
+        BridgeLauncher.main(args);
         
         System.out.println("\n\nFACADE PATTERN");
         System.out.println("-".repeat(40));

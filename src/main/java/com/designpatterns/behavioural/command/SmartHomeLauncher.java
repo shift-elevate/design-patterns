@@ -13,7 +13,7 @@ public class SmartHomeLauncher {
     
     public static void main(String[] args) {
         System.out.println("=".repeat(60));
-        System.out.println("🏠 SMART HOME AUTOMATION - COMMAND PATTERN DEMO");
+        System.out.println("COMMAND PATTERN - SMART HOME AUTOMATION");
         System.out.println("=".repeat(60));
         
         Light livingRoomLight = new Light("Living Room");
@@ -39,46 +39,46 @@ public class SmartHomeLauncher {
         demonstrateMacroCommand(remote);
         
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("✅ COMMAND PATTERN DEMONSTRATION COMPLETE!");
+        System.out.println("COMMAND PATTERN DEMONSTRATION COMPLETE!");
         System.out.println("=".repeat(60));
     }
     
     private static void demonstrateBasicCommands(RemoteControl remote) {
-        System.out.println("\n📱 BASIC COMMANDS DEMONSTRATION");
-        System.out.println("-".repeat(40));
+        System.out.println("\n1. Basic Commands Demonstration:");
+        System.out.println("-".repeat(60));
         
-        System.out.println("\n1. Turn on light:");
+        System.out.println("   a) Turn on light:");
         remote.pressButton("1");
         
-        System.out.println("\n2. Turn on fan:");
+        System.out.println("   b) Turn on fan:");
         remote.pressButton("3");
         
-        System.out.println("\n3. Turn off light:");
+        System.out.println("   c) Turn off light:");
         remote.pressButton("2");
     }
     
     private static void demonstrateUndoRedo(RemoteControl remote) {
-        System.out.println("\n🔄 UNDO/REDO DEMONSTRATION");
-        System.out.println("-".repeat(40));
+        System.out.println("\n2. Undo/Redo Demonstration:");
+        System.out.println("-".repeat(60));
         
-        System.out.println("\n4. Undo last command (should turn light back on):");
+        System.out.println("   a) Undo last command (should turn light back on):");
         remote.undoLastCommand();
         
-        System.out.println("\n5. Redo last command (should turn light back off):");
+        System.out.println("   b) Redo last command (should turn light back off):");
         remote.redoLastCommand();
     }
     
     private static void demonstrateMacroCommand(RemoteControl remote) {
-        System.out.println("\n🎬 MACRO COMMAND DEMONSTRATION");
-        System.out.println("-".repeat(40));
+        System.out.println("\n3. Macro Command Demonstration:");
+        System.out.println("-".repeat(60));
         
-        System.out.println("\n6. Execute 'Movie Time' macro (turn off light + turn on fan):");
+        System.out.println("   a) Execute 'Movie Time' macro (turn off light + turn on fan):");
         remote.pressButton("5");
         
-        System.out.println("\n7. Undo macro command (should reverse both operations):");
+        System.out.println("   b) Undo macro command (should reverse both operations):");
         remote.undoLastCommand();
         
-        System.out.println("\n8. Redo macro command (should execute both operations again):");
+        System.out.println("   c) Redo macro command (should execute both operations again):");
         remote.redoLastCommand();
     }
 }

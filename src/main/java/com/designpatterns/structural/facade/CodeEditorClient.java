@@ -10,7 +10,7 @@ public class CodeEditorClient {
         EditorFacade editorFacade = new EditorFacade();
         
         System.out.println("1. Opening File with Facade:");
-        System.out.println("=".repeat(50));
+        System.out.println("-".repeat(60));
         
         EditorResult result = editorFacade.openFile("src/main/java/Example.java");
         
@@ -26,8 +26,8 @@ public class CodeEditorClient {
         }
         System.out.println();
         
-        System.out.println("2. Getting Code Suggestions:");
-        System.out.println("=".repeat(50));
+        System.out.println("\n2. Getting Code Suggestions:");
+        System.out.println("-".repeat(60));
         
         List<String> suggestions = editorFacade.getCodeSuggestions("Example.java", 5, 10);
         System.out.println("Suggestions at line 5: " + suggestions.size());
@@ -36,39 +36,34 @@ public class CodeEditorClient {
         }
         System.out.println();
         
-        System.out.println("3. Setting Breakpoint:");
-        System.out.println("=".repeat(50));
+        System.out.println("\n3. Setting Breakpoint:");
+        System.out.println("-".repeat(60));
         
         editorFacade.setBreakpoint("Example.java", 15);
         System.out.println();
         
-        System.out.println("4. Git Operations:");
-        System.out.println("=".repeat(50));
+        System.out.println("\n4. Git Operations:");
+        System.out.println("-".repeat(60));
         
         editorFacade.stageFile("Example.java");
         System.out.println();
         
-        System.out.println("5. Continuing Debugging:");
-        System.out.println("=".repeat(50));
+        System.out.println("\n5. Continuing Debugging:");
+        System.out.println("-".repeat(60));
         
         editorFacade.continueDebugging();
         System.out.println();
         
-        System.out.println("6. Error Handling:");
-        System.out.println("=".repeat(50));
+        System.out.println("\n6. Error Handling:");
+        System.out.println("-".repeat(60));
         
         EditorResult errorResult = editorFacade.openFile("nonexistent/file.java");
         System.out.println("Error Result: " + errorResult.getMessage());
         System.out.println("Success: " + errorResult.isSuccess());
         System.out.println();
         
-        System.out.println("\n" + "=".repeat(70));
-        System.out.println("Facade Pattern Benefits Demonstrated:");
-        System.out.println("• Simplified interface to complex subsystems");
-        System.out.println("• Reduced client code complexity");
-        System.out.println("• Centralized error handling");
-        System.out.println("• Easy to extend with new features");
-        System.out.println("• Clean separation of concerns");
-        System.out.println("=".repeat(70));
+        System.out.println("\n" + "=".repeat(60));
+        System.out.println("FACADE PATTERN DEMONSTRATION COMPLETE!");
+        System.out.println("=".repeat(60));
     }
 }

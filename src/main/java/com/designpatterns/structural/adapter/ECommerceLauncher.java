@@ -12,7 +12,7 @@ public class ECommerceLauncher {
         PaymentService paymentService = new PaymentService(processor);
         
         System.out.println("1. Successful Payment Processing:");
-        System.out.println("=".repeat(50));
+        System.out.println("-".repeat(60));
         
         PaymentRequest validRequest = new PaymentRequest(
             "1234567890123456",
@@ -24,8 +24,8 @@ public class ECommerceLauncher {
         displayPaymentResult(result);
         System.out.println();
         
-        System.out.println("2. Payment Validation Failure:");
-        System.out.println("=".repeat(50));
+        System.out.println("\n2. Payment Validation Failure:");
+        System.out.println("-".repeat(60));
         
         PaymentRequest invalidRequest = new PaymentRequest(
             "1234",
@@ -37,8 +37,8 @@ public class ECommerceLauncher {
         displayPaymentResult(failureResult);
         System.out.println();
         
-        System.out.println("3. Payment Amount Limit Validation:");
-        System.out.println("=".repeat(50));
+        System.out.println("\n3. Payment Amount Limit Validation:");
+        System.out.println("-".repeat(60));
         
         PaymentRequest limitRequest = new PaymentRequest(
             "1234567890123456",
@@ -50,8 +50,8 @@ public class ECommerceLauncher {
         displayPaymentResult(limitResult);
         System.out.println();
         
-        System.out.println("4. Refund Processing:");
-        System.out.println("=".repeat(50));
+        System.out.println("\n4. Refund Processing:");
+        System.out.println("-".repeat(60));
         
         if (result.isSuccess()) {
             PaymentResult refundResult = paymentService.processRefund(
@@ -63,8 +63,8 @@ public class ECommerceLauncher {
         }
         System.out.println();
         
-        System.out.println("5. Validation-Only Check:");
-        System.out.println("=".repeat(50));
+        System.out.println("\n5. Validation-Only Check:");
+        System.out.println("-".repeat(60));
         
         PaymentRequest checkRequest = new PaymentRequest(
             "9876543210987654",
@@ -76,8 +76,8 @@ public class ECommerceLauncher {
         System.out.println("Payment validation result: " + (isValid ? "VALID" : "INVALID"));
         System.out.println();
         
-        System.out.println("6. Adapter-Specific Functionality:");
-        System.out.println("=".repeat(50));
+        System.out.println("\n6. Adapter-Specific Functionality:");
+        System.out.println("-".repeat(60));
         
         if (processor instanceof LegacyPaymentAdapter) {
             LegacyPaymentAdapter adapter = (LegacyPaymentAdapter) processor;
@@ -89,14 +89,9 @@ public class ECommerceLauncher {
                 legacy.checkCardValidity("1234567890123456", "12/25"));
         }
         
-        System.out.println("\n" + "=".repeat(70));
-        System.out.println("Adapter Pattern Benefits Demonstrated:");
-        System.out.println("• Legacy system integration without modification");
-        System.out.println("• Modern interface for client code");
-        System.out.println("• Transparent translation between incompatible interfaces");
-        System.out.println("• Enhanced functionality added by adapter");
-        System.out.println("• Clean separation of concerns");
-        System.out.println("=".repeat(70));
+        System.out.println("\n" + "=".repeat(60));
+        System.out.println("ADAPTER PATTERN DEMONSTRATION COMPLETE!");
+        System.out.println("=".repeat(60));
     }
     
     private static void displayPaymentResult(PaymentResult result) {
