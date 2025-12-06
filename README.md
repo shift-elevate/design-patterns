@@ -66,7 +66,8 @@ design-patterns/
         ├── observer/
         ├── command/
         ├── iterator/
-        └── state/
+        ├── state/
+        └── mediator/
 ```
 
 **Pattern Organization:**
@@ -207,6 +208,9 @@ mvn test -Dtest=IteratorPatternTest
 
 # State Pattern
 mvn test -Dtest=StatePatternTest
+
+# Mediator Pattern
+mvn test -Dtest=MediatorPatternTest
 ```
 
 ## 🚀 Running Launcher Classes
@@ -265,6 +269,9 @@ mvn exec:java -Dexec.mainClass="com.designpatterns.behavioural.iterator.MusicPla
 
 # State Pattern
 mvn exec:java -Dexec.mainClass="com.designpatterns.behavioural.state.DocumentWorkflowLauncher"
+
+# Mediator Pattern
+mvn exec:java -Dexec.mainClass="com.designpatterns.behavioural.mediator.MediatorLauncher"
 ```
 
 
