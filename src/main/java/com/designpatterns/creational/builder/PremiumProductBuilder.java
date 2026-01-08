@@ -1,7 +1,6 @@
-package com.designpatterns.creational.builder.builders;
+package com.designpatterns.creational.builder;
 
 import com.designpatterns.creational.builder.Product;
-import com.designpatterns.creational.builder.products.PremiumProduct;
 
 public class PremiumProductBuilder extends ProductBuilder {
     protected int warrantyMonths = 12;

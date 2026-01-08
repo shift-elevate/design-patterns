@@ -2,6 +2,7 @@ package com.designpatterns;
 
 import com.designpatterns.creational.factorymethod.GameLauncher;
 import com.designpatterns.structural.bridge.BridgeLauncher;
+import com.designpatterns.structural.proxy.ProxyLauncher;
 
 public class Main {
     
@@ -73,7 +74,11 @@ public class Main {
         System.out.println("\n\nFLYWEIGHT PATTERN");
         System.out.println("-".repeat(40));
         com.designpatterns.structural.flyweight.FlyweightLauncher.main(args);
-        
+
+        System.out.println("\n\nPROXY PATTERN");
+        System.out.println("-".repeat(40));
+        ProxyLauncher.main(args);
+
         System.out.println("\n" + "=".repeat(70));
         System.out.println("For comprehensive testing and detailed demonstrations:");
         System.out.println("mvn test                    # Run all tests");
@@ -90,6 +95,7 @@ public class Main {
         System.out.println("mvn test -Dtest=BridgePatternTest");
         System.out.println("mvn test -Dtest=FacadePatternTest");
         System.out.println("mvn test -Dtest=FlyweightPatternTest");
+        System.out.println("mvn test -Dtest=ProxyPatternTest");
         System.out.println("=".repeat(70));
     }
 } 

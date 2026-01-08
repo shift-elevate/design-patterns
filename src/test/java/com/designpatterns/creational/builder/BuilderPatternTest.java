@@ -1,9 +1,9 @@
 package com.designpatterns.creational.builder;
 
-import com.designpatterns.creational.builder.builders.StandardProductBuilder;
-import com.designpatterns.creational.builder.builders.PremiumProductBuilder;
-import com.designpatterns.creational.builder.products.StandardProduct;
-import com.designpatterns.creational.builder.products.PremiumProduct;
+import com.designpatterns.creational.builder.StandardProductBuilder;
+import com.designpatterns.creational.builder.PremiumProductBuilder;
+import com.designpatterns.creational.builder.StandardProduct;
+import com.designpatterns.creational.builder.PremiumProduct;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;

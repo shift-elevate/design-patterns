@@ -1,4 +1,4 @@
-package com.designpatterns.creational.builder.products;
+package com.designpatterns.creational.builder;
 
 import com.designpatterns.creational.builder.Product;
 import java.util.ArrayList;

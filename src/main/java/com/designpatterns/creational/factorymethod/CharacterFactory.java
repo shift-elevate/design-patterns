@@ -1,6 +1,5 @@
-package com.designpatterns.creational.factorymethod.factories;
+package com.designpatterns.creational.factorymethod;
 
-import com.designpatterns.creational.factorymethod.characters.GameCharacter;
 
 public abstract class CharacterFactory {
     

@@ -1,4 +1,4 @@
-package com.designpatterns.behavioural.command.receivers;
+package com.designpatterns.behavioural.command;
 
 public class Light {
     private String location;

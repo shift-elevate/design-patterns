@@ -1,15 +1,15 @@
 package com.designpatterns.creational.factorymethod;
 
-import com.designpatterns.creational.factorymethod.characters.GameCharacter;
-import com.designpatterns.creational.factorymethod.characters.Warrior;
-import com.designpatterns.creational.factorymethod.characters.Mage;
-import com.designpatterns.creational.factorymethod.characters.Archer;
-import com.designpatterns.creational.factorymethod.characters.Rogue;
-import com.designpatterns.creational.factorymethod.factories.CharacterFactory;
-import com.designpatterns.creational.factorymethod.factories.WarriorFactory;
-import com.designpatterns.creational.factorymethod.factories.MageFactory;
-import com.designpatterns.creational.factorymethod.factories.ArcherFactory;
-import com.designpatterns.creational.factorymethod.factories.RogueFactory;
+import com.designpatterns.creational.factorymethod.GameCharacter;
+import com.designpatterns.creational.factorymethod.Warrior;
+import com.designpatterns.creational.factorymethod.Mage;
+import com.designpatterns.creational.factorymethod.Archer;
+import com.designpatterns.creational.factorymethod.Rogue;
+import com.designpatterns.creational.factorymethod.CharacterFactory;
+import com.designpatterns.creational.factorymethod.WarriorFactory;
+import com.designpatterns.creational.factorymethod.MageFactory;
+import com.designpatterns.creational.factorymethod.ArcherFactory;
+import com.designpatterns.creational.factorymethod.RogueFactory;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;

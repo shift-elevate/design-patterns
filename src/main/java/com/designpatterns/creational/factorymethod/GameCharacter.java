@@ -1,4 +1,4 @@
-package com.designpatterns.creational.factorymethod.characters;
+package com.designpatterns.creational.factorymethod;
 
 public interface GameCharacter {
     void attack();

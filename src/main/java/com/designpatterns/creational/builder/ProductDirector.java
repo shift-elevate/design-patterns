@@ -1,7 +1,5 @@
 package com.designpatterns.creational.builder;
 
-import com.designpatterns.creational.builder.builders.ProductBuilder;
-import com.designpatterns.creational.builder.builders.PremiumProductBuilder;
 
 public class ProductDirector {
     

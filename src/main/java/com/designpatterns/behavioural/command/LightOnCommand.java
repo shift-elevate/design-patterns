@@ -1,7 +1,6 @@
-package com.designpatterns.behavioural.command.commands;
+package com.designpatterns.behavioural.command;
 
 import com.designpatterns.behavioural.command.Command;
-import com.designpatterns.behavioural.command.receivers.Light;
 
 public class LightOnCommand implements Command {
     private Light light;

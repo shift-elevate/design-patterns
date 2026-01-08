@@ -61,7 +61,8 @@ design-patterns/
     │   ├── composite/
     │   ├── decorator/
     │   ├── facade/
-    │   └── flyweight/
+    │   ├── flyweight/
+    │   └── proxy/
     └── behavioural/
         ├── observer/
         ├── command/
@@ -193,6 +194,9 @@ mvn test -Dtest=FacadePatternTest
 
 # Flyweight Pattern
 mvn test -Dtest=FlyweightPatternTest
+
+# Proxy Pattern
+mvn test -Dtest=ProxyPatternTest
 ```
 
 #### 🎭 **Behavioural Patterns**
@@ -257,6 +261,9 @@ mvn exec:java -Dexec.mainClass="com.designpatterns.structural.facade.CodeEditorC
 
 # Flyweight Pattern
 mvn exec:java -Dexec.mainClass="com.designpatterns.structural.flyweight.FlyweightLauncher"
+
+# Proxy Pattern
+mvn exec:java -Dexec.mainClass="com.designpatterns.structural.proxy.ProxyLauncher"
 ```
 
 #### 🎭 **Behavioural Patterns**

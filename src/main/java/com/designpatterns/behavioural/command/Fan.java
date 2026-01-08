@@ -1,4 +1,4 @@
-package com.designpatterns.behavioural.command.receivers;
+package com.designpatterns.behavioural.command;
 
 public class Fan {
     private String location;

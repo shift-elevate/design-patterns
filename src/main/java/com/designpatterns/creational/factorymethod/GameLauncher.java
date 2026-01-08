@@ -1,9 +1,9 @@
 package com.designpatterns.creational.factorymethod;
 
-import com.designpatterns.creational.factorymethod.factories.CharacterFactory;
-import com.designpatterns.creational.factorymethod.factories.WarriorFactory;
-import com.designpatterns.creational.factorymethod.factories.MageFactory;
-import com.designpatterns.creational.factorymethod.factories.ArcherFactory;
+import com.designpatterns.creational.factorymethod.CharacterFactory;
+import com.designpatterns.creational.factorymethod.WarriorFactory;
+import com.designpatterns.creational.factorymethod.MageFactory;
+import com.designpatterns.creational.factorymethod.ArcherFactory;
 
 public class GameLauncher {
 

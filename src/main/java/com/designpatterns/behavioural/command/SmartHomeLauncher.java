@@ -1,10 +1,5 @@
 package com.designpatterns.behavioural.command;
 
-import com.designpatterns.behavioural.command.commands.LightOnCommand;
-import com.designpatterns.behavioural.command.commands.LightOffCommand;
-import com.designpatterns.behavioural.command.commands.FanCommand;
-import com.designpatterns.behavioural.command.receivers.Light;
-import com.designpatterns.behavioural.command.receivers.Fan;
 
 import java.util.Arrays;
 import java.util.List;

@@ -1,10 +1,10 @@
 package com.designpatterns.behavioural.command;
 
-import com.designpatterns.behavioural.command.commands.LightOnCommand;
-import com.designpatterns.behavioural.command.commands.LightOffCommand;
-import com.designpatterns.behavioural.command.commands.FanCommand;
-import com.designpatterns.behavioural.command.receivers.Light;
-import com.designpatterns.behavioural.command.receivers.Fan;
+import com.designpatterns.behavioural.command.LightOnCommand;
+import com.designpatterns.behavioural.command.LightOffCommand;
+import com.designpatterns.behavioural.command.FanCommand;
+import com.designpatterns.behavioural.command.Light;
+import com.designpatterns.behavioural.command.Fan;
 
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;

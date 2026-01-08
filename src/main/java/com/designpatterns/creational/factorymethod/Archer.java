@@ -1,4 +1,4 @@
-package com.designpatterns.creational.factorymethod.characters;
+package com.designpatterns.creational.factorymethod;
 
 public class Archer implements GameCharacter {
     private int health = 90;

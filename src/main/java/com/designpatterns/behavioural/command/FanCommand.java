@@ -1,7 +1,6 @@
-package com.designpatterns.behavioural.command.commands;
+package com.designpatterns.behavioural.command;
 
 import com.designpatterns.behavioural.command.Command;
-import com.designpatterns.behavioural.command.receivers.Fan;
 
 public class FanCommand implements Command {
     private Fan fan;
